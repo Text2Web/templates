@@ -1,0 +1,24 @@
+/*___________________________Search result page_____________________*/
+
+.search-item {
+    border: none;
+    max-width: 1040px;
+}
+.search-item .card-body {
+    padding: 0;
+}
+.search-item ~ .search-item {
+    margin-top: 30px;
+}
+.search-item a:hover {
+    text-decoration: underline;
+}
+.search-item li {
+    display: inline-block;
+    list-style: none;
+}
+.search-item li:after {
+    content: "\f105";
+    margin: 0 5px;
+    font-family: Fontawesome;
+}

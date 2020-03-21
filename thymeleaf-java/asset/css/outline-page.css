@@ -1,0 +1,22 @@
+/*___________________________Outline Page_____________________*/
+.out-line-list li {
+    list-style: none;
+}
+.out-line-list li:before {
+    content: "\f178";
+    font-family: "Fontawesome";
+    margin-right: 10px;
+}
+.out-line-list li ~ li {
+    margin-top: 8px;
+}
+.out-line-list li a {
+    color: #139ac4;
+    outline: none;
+    font-weight: 500;
+    font-size: 17px;
+}
+.out-line-list li a:hover {
+    text-decoration: underline;
+    color: #139ac4;
+}

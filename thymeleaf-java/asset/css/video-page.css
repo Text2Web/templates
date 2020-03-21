@@ -1,0 +1,16 @@
+/*___________________________video lisign_____________________*/
+
+.video-list-item {
+    max-width: 1200px;
+}
+.video-list-item ~ .video-list-item {
+    padding-top: 15px;
+}
+.video-thumb-title {
+    margin-top: 0;
+}
+@media (max-width: 575px) {
+    .video-thumb-title {
+        margin-top: 15px;
+    }
+}
