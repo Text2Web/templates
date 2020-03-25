@@ -48,7 +48,8 @@
             <div class="col-sm-12">
                 <div class="quick-feature-wrapper">
                     <div class="quick-feature">
-                        {% for block in page.blocks.SQUIRE_BLOCK.childs %}
+                        <% print page.blocks.SQUIRE_BLOCK.childs.each{ it.name} %>
+                        {% (for block in page.blocks.SQUIRE_BLOCK.childs) { print block }%}
                             <div class="block-wrapper">
                                 <a href="{{ block.url }}" class="block">
                                     <div class="icon-wrap">
@@ -60,7 +61,7 @@
                                     </div>
                                 </a>
                             </div>
-                        {% endfor %}
+                        {% } %}
                     </div>
                 </div>
             </div>
