@@ -56,7 +56,7 @@
                                     </div>
                                     <div class="content">
                                         <h5 class="card-title">${ block.name }</h5>
-                                        <p class="card-text">${ block.summery }}</p>
+                                        <p class="card-text">${ block.summery }</p>
                                     </div>
                                 </a>
                             </div>
