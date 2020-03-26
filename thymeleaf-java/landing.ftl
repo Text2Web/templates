@@ -48,20 +48,19 @@
             <div class="col-sm-12">
                 <div class="quick-feature-wrapper">
                     <div class="quick-feature">
-                        <% print page.blocks.SQUIRE_BLOCK.childs.each{ it.name} %>
-                        {% (for block in page.blocks.SQUIRE_BLOCK.childs) { print block }%}
+                        <#list page.blocks.SQUIRE_BLOCK.childs as block>
                             <div class="block-wrapper">
-                                <a href="{{ block.url }}" class="block">
+                                <a href="${ block.url }" class="block">
                                     <div class="icon-wrap">
-                                        <i class="{{ block.icon }}"></i>
+                                        <i class="${ block.icon }"></i>
                                     </div>
                                     <div class="content">
-                                        <h5 class="card-title">{{ block.name }}</h5>
-                                        <p class="card-text">{{ block.summery }}</p>
+                                        <h5 class="card-title">${ block.name }</h5>
+                                        <p class="card-text">${ block.summery }}</p>
                                     </div>
                                 </a>
                             </div>
-                        {% } %}
+                        </#list>
                     </div>
                 </div>
             </div>
@@ -77,25 +76,17 @@
                     <div class="card-body">
                         <div class="row">
 
-                            <ul>
-                             <#list page.blocks.LIST_BLOCK['childs'] as system>
-                                <li>${system_index + 1}. ${system.name}</li>
-                            </#list>
-                            </ul>
+
                             <#list page.blocks.LIST_BLOCK['childs'] as listBlock>
-
-                            </#list>
-
-                            {% for key, listBlock in page.blocks.LIST_BLOCK.childs %}
                                 <div class="col-md-4 col-space-tb">
-                                    <h5 class=""><a href="{{listBlock.url}}">{{ listBlock.name }}</a></h5>
+                                    <h5 class=""><a href="${listBlock.url}">${listBlock.name}</a></h5>
                                     <ul class="list-style-arrow">
-                                    {% for topic in listBlock.childs %}
-                                        <li><a href="{{topic.url}}">{{topic.name}}</a></li>
-                                    {% endfor %}
+                                        <#list listBlock.childs as topic>
+                                            <li><a href="${topic.url}">${topic.name}</a></li>
+                                        </#list>
                                     </ul>
                                 </div>
-                            {% endfor %}
+                            </#list>
                         </div>
                     </div>
                 </div>
@@ -103,8 +94,6 @@
             <div class="col-1"></div>
         </div>
     </div>
-
-
 </div>
 
 
