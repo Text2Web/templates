@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{{page.title}}</title>
+    <title>${page.title}</title>
     <link rel="stylesheet" href="/asset/css/bootstrap.min.css">
     <link rel="stylesheet" href="/asset/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/asset/font-awesome/css/all.css">
@@ -57,7 +57,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path></svg>
                 </button>
             </form>
-            {% include 'common/left-nav.html' with {'navs': page.nav} %}
+            <#include "common/left-nav.ftl" />
         </div>
 
         <main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content" role="main">
