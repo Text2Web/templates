@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{{page.title}}</title>
+    <title>${page.title}</title>
     <link rel="stylesheet" href="/asset/css/bootstrap.min.css">
     <link rel="stylesheet" href="/asset/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/asset/font-awesome/css/all.css">
@@ -79,14 +79,14 @@
 
         <main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content" role="main">
             <div class="col inner-content">
-                {% for outline in page.topics %}
-                <h3 class="underline-header">{{ outline.name }}</h3>
-                <ul class="out-line-list pb-x">
-                    {% for topic in outline.childs %}
-                    <li><a href="{{topic.url}}">{{topic.name}}</a></li>
-                    {% endfor %}
-                </ul>
-                {% endfor %}
+                <#list page.topics as outline>
+                    <h3 class="underline-header">${outline.name}</h3>
+                    <ul class="out-line-list pb-x">
+                        <#list outline.childs as topic>
+                            <li><a href="${topic.url}">${topic.name}</a></li>
+                        </#list>
+                    </ul>
+                </#list>
             </div>
         </main>
     </div>
