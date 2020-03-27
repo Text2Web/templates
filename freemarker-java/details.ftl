@@ -50,15 +50,8 @@
 <div class="container-fluid">
     <div class="row flex-xl-nowrap">
 
-        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
-            <form class="bd-search d-flex align-items-center">
-                <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
-                <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path></svg>
-                </button>
-            </form>
-            <#include "common/left-nav.ftl" />
-        </div>
+        <#assign leftNavData = page.nav>
+        <#include "common/left-nav.ftl" />
 
         <main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content" role="main">
             <div class="asciidoctor-content">
