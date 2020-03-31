@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{{page.title}}</title>
+    <title>${page.title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/asset/css/bootstrap.min.css">
     <link rel="stylesheet" href="/asset/font-awesome/css/font-awesome.min.css">
@@ -53,45 +53,28 @@
 <div class="container-fluid">
     <div class="row flex-xl-nowrap">
 
-        <div class="col-12 col-md-3 col-xl-2 bd-sidebar left-panel">
-
-            <nav class="collapse bd-links left-navigation" id="bd-docs-nav">
-                <div class="bd-toc-item">
-                    <h4 class="left-panel-title">Category</h4>
-                    <ul class="nav bd-sidenav">
-                        <li class=""><a href="#">Introduction</a></li>
-                        <li><a href="#" data-toggle="collapse" data-target="#website-design">Java</a>
-                            <ul id="website-design" class="collapse ">
-                                <li class=""><a href="#">Page 1</a></li>
-                                <li class=""><a href="#">Page 2</a></li>
-                                <li class=""><a href="#">Page 3</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path></svg>
-            </button>
-        </div>
+        <#assign leftNavData = page.relatedNav>
+        <#include "common/left-nav.ftl" />
 
         <main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content" role="main">
             <div class="row">
-                {% for topic in page.topics %}
-                    <div class="col-3 col-md-3 margin-bottom-20" >
-                        <a href="{{topic.url}}">
-                            <div class="card">
-                                <img src="/asset/images/default_thumbs.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{topic.name}}</h5>
-                                    <p class="card-text">
-                                        {{topic.summery}}
-                                    </p>
+                <#if page.topics?has_content>
+                    <#list page.topics as topic>
+                        <div class="col-3 col-md-3 margin-bottom-20" >
+                            <a href="${topic.url}">
+                                <div class="card">
+                                    <img src="<#if topic.image?has_content>${topic.image}<#else>/asset/images/default_thumbs.jpg</#if>" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${topic.name}</h5>
+                                        <p class="card-text">
+                                            ${topic.summery}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                {% endfor %}
+                            </a>
+                        </div>
+                    </#list>
+                </#if>
             </div>
         </main>
     </div>
