@@ -64,7 +64,7 @@
                     <h3 class="underline-header">${outline.name}</h3>
                     <ul class="out-line-list pb-x">
                         <#list outline.childs as topic>
-                            <li><a href="${topic.url}">${topic.name}</a></li>
+                            <li><a href="${tagHelper.twUrl(topic.url)}">${topic.name}</a></li>
                         </#list>
                     </ul>
                 </#list>
