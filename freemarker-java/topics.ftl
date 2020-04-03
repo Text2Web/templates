@@ -67,7 +67,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">${topic.name}</h5>
                                         <p class="card-text">
-                                            ${topic.summery}
+                                            ${topic.summery?default("No Summery Available")}
                                         </p>
                                     </div>
                                 </div>

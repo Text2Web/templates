@@ -1,3 +1,6 @@
+<meta charset="UTF-8">
+<link rel="icon" href="data:;base64,=">
+
 ${tagHelper.addCssTag("/asset/css/bootstrap.min.css")}
 ${tagHelper.addCssTag("/asset/font-awesome/css/font-awesome.min.css")}
 ${tagHelper.addCssTag("/asset/font-awesome/css/all.css")}
