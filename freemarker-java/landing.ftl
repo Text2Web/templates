@@ -2,19 +2,9 @@
 <html>
 <head>
     <title>${page.title}</title>
-    <link rel="stylesheet" href="/asset/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/asset/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/asset/font-awesome/css/all.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-
-    <script src="/asset/js/jquery-3.2.1.min.js"></script>
-    <script src="/asset/js/popper.min.js"></script>
-    <script src="/asset/js/bootstrap.min.js"></script>
-    <script src="/asset/js/jquery.autocomplete.js"></script>
-
-    <link rel="stylesheet" href="/asset/css/design.css">
-    <link rel="stylesheet" href="/asset/css/landing.css">
-    <link rel="stylesheet" href="/asset/css/style.css">
+    <#include "common/common-header.ftl" />
+    ${tagHelper.addCssTag("/asset/css/landing.css")}
+    ${tagHelper.addCssTag("/asset/css/style.css")}
 </head>
 <body>
 <div class="body">
@@ -31,7 +21,7 @@
             <div class="col-sm-12">
                 <div class="intro">
                     <div class="text-center mb-4">
-                        <img  src="/asset/images/logo.png" class="responsive" alt="Logo" width="500px"/>
+                        <img  src="${tagHelper.twUrl("/asset/images/logo.png")}" class="responsive" alt="Logo" width="500px"/>
                     </div>
                     <form>
                         <div class="form-label-group">
@@ -51,7 +41,7 @@
                         <#if page.blocks.SQUIRE_BLOCK.childs?has_content>
                             <#list page.blocks.SQUIRE_BLOCK.childs as block>
                                 <div class="block-wrapper">
-                                    <a href="${ block.url }" class="block">
+                                    <a href="${ tagHelper.twUrlWithExtension(block.url) }" class="block">
                                         <div class="icon-wrap">
                                             <i class="${ block.icon }"></i>
                                         </div>
@@ -80,10 +70,10 @@
                             <#if page.blocks.LIST_BLOCK.childs?has_content>
                                 <#list page.blocks.LIST_BLOCK.childs as listBlock>
                                     <div class="col-md-4 col-space-tb">
-                                        <h5 class=""><a href="${listBlock.url}">${listBlock.name}</a></h5>
+                                        <h5 class=""><a href="${tagHelper.twUrlWithExtension(listBlock.url)}">${listBlock.name}</a></h5>
                                         <ul class="list-style-arrow">
                                             <#list listBlock.childs as topic>
-                                                <li><a href="${topic.url}">${topic.name}</a></li>
+                                                <li><a href="${tagHelper.twUrlWithExtension(topic.url)}">${topic.name}</a></li>
                                             </#list>
                                         </ul>
                                     </div>
