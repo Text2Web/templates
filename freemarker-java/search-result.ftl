@@ -1,214 +1,131 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Search</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/asset/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/asset/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/asset/font-awesome/css/all.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link rel="stylesheet" href="/asset/css/asciidoctor.css">
-    <link rel="stylesheet" href="/asset/css/design.css">
-    <link rel="stylesheet" href="/asset/css/style.css">
-    <link rel="stylesheet" href="/asset/css/search-result-page.css">
-    <script src="/asset/js/jquery-3.2.1.min.js"></script>
-    <script src="/asset/js/popper.min.js"></script>
-    <script src="/asset/js/bootstrap.min.js"></script>
-    <script src="/asset/js/jquery.autocomplete.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Time to Hack: Firebase with JavaScript and jQuery</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style type="text/css">
+        #contacts p,
+        #contacts p.lead{
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-<a id="skippy" class="sr-only sr-only-focusable" href="#content">
-    <div class="container">
-        <span class="skiplink-text">Skip to main content</span>
-    </div>
-</a>
-
-
-<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
-    <a class="navbar-brand mr-0 mr-md-2" href="">
-        <img  src="/asset/images/logo-32x32.png" class="responsive" alt="Logo"/>
-    </a>
-
-    <div class="navbar-nav-scroll">
-        <ul class="navbar-nav bd-navbar-nav flex-row">
-            <li class="nav-item">
-                <a class="nav-link " href="/">Home</a>
-            </li>
-        </ul>
-    </div>
-    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-        <li class="nav-item dropdown">
-            <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Latest
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
-                <a class="dropdown-item active" href="#">Latest</a>
-                <a class="dropdown-item" href="#">old</a>
-            </div>
-        </li>
-    </ul>
-</header>
-
-
-<div class="container-fluid">
-    <div class="row flex-xl-nowrap">
-
-        <div class="col-12 col-md-3 col-xl-2 bd-sidebar left-panel">
-
-            <nav class="collapse bd-links left-navigation" id="bd-docs-nav">
-                <div class="bd-toc-item">
-                    <h4 class="left-panel-title">Category</h4>
-                    <ul class="nav bd-sidenav">
-                        <li class=""><a href="#">Introduction</a></li>
-                        <li><a href="#" data-toggle="collapse" data-target="#website-design">Java</a>
-                            <ul id="website-design" class="collapse ">
-                                <li class=""><a href="#">Page 1</a></li>
-                                <li class=""><a href="#">Page 2</a></li>
-                                <li class=""><a href="#">Page 3</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path></svg>
-            </button>
-        </div>
-
-        <main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content" role="main">
-
-            <nav class="navbar search-video d-flex justify-content-center">
-                <form class="search-form">
-                    <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
-                </form>
-            </nav>
-
-            <div class="col inner-content">
-
-                <h3 class="underline-header">Search Result</h3>
-                <div class="card search-item">
-                    <div class="card-body">
-                        <h4>
-                            <a href="#">Lorem ipsum dolor sit amet</a>
-                        </h4>
-                        <ul>
-                            <li><a href="#">https://www.google.com/</a></li>
-                            <li><a href="#">breadcroumb</a></li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue et mi ut finibus. Proin orci mauris, onsectetur adipiscing elit. Donec congue et mi ut finibus.imperdiet a maximus eget, luctus sed dui.</p>
-                    </div>
-                </div><!--item End-->
-                <div class="card search-item">
-                    <div class="card-body">
-                        <h4>
-                            <a href="#">Lorem ipsum dolor sit amet</a>
-                        </h4>
-                        <ul>
-                            <li><a href="#">https://www.google.com/</a></li>
-                            <li><a href="#">breadcroumb</a></li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue et mi ut finibus. Proin orci mauris, onsectetur adipiscing elit. Donec congue et mi ut finibus.imperdiet a maximus eget, luctus sed dui.</p>
-                    </div>
-                </div><!--item End-->
-                <div class="card search-item">
-                    <div class="card-body">
-                        <h4>
-                            <a href="#">Lorem ipsum dolor sit amet</a>
-                        </h4>
-                        <ul>
-                            <li><a href="#">https://www.google.com/</a></li>
-                            <li><a href="#">breadcroumb</a></li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue et mi ut finibus. Proin orci mauris, onsectetur adipiscing elit. Donec congue et mi ut finibus.imperdiet a maximus eget, luctus sed dui.</p>
-                    </div>
-                </div><!--item End-->
-                <div class="card search-item">
-                    <div class="card-body">
-                        <h4>
-                            <a href="#">Lorem ipsum dolor sit amet</a>
-                        </h4>
-                        <ul>
-                            <li><a href="#">https://www.google.com/</a></li>
-                            <li><a href="#">breadcroumb</a></li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue et mi ut finibus. Proin orci mauris, onsectetur adipiscing elit. Donec congue et mi ut finibus.imperdiet a maximus eget, luctus sed dui.</p>
-                    </div>
-                </div><!--item End-->
-                <div class="card search-item">
-                    <div class="card-body">
-                        <h4>
-                            <a href="#">Lorem ipsum dolor sit amet</a>
-                        </h4>
-                        <ul>
-                            <li><a href="#">https://www.google.com/</a></li>
-                            <li><a href="#">breadcroumb</a></li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue et mi ut finibus. Proin orci mauris, onsectetur adipiscing elit. Donec congue et mi ut finibus.imperdiet a maximus eget, luctus sed dui.</p>
-                    </div>
-                </div><!--item End-->
-                <div class="card search-item">
-                    <div class="card-body">
-                        <h4>
-                            <a href="#">Lorem ipsum dolor sit amet</a>
-                        </h4>
-                        <ul>
-                            <li><a href="#">https://www.google.com/</a></li>
-                            <li><a href="#">breadcroumb</a></li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue et mi ut finibus. Proin orci mauris, onsectetur adipiscing elit. Donec congue et mi ut finibus.imperdiet a maximus eget, luctus sed dui.</p>
-                    </div>
-                </div><!--item End-->
-                <div class="card search-item">
-                    <div class="card-body">
-                        <h4>
-                            <a href="#">Lorem ipsum dolor sit amet</a>
-                        </h4>
-                        <ul>
-                            <li><a href="#">https://www.google.com/</a></li>
-                            <li><a href="#">breadcroumb</a></li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue et mi ut finibus. Proin orci mauris, onsectetur adipiscing elit. Donec congue et mi ut finibus.imperdiet a maximus eget, luctus sed dui.</p>
-                    </div>
-                </div><!--item End-->
-                <div class="card search-item">
-                    <div class="card-body">
-                        <h4>
-                            <a href="#">Lorem ipsum dolor sit amet</a>
-                        </h4>
-                        <ul>
-                            <li><a href="#">https://www.google.com/</a></li>
-                            <li><a href="#">breadcroumb</a></li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue et mi ut finibus. Proin orci mauris, onsectetur adipiscing elit. Donec congue et mi ut finibus.imperdiet a maximus eget, luctus sed dui.</p>
-                    </div>
-                </div><!--item End-->
-
-
-
-
-            </div>
-
-
-
-        </main>
-    </div>
-</div>
-
-<div class="container-fluid footer">
+<div class="container">
+    <h1>Contact Store Application</h1>
+    <hr/>
     <div class="row">
-        <div class="col-sm-6">
-            <a href="http://www.hmtmcse.com/" target="_blank">HMTMCSE</a>
+        <div class="col-md-6">
+            <form method="post" name="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" required placeholder="Enter name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" required placeholder="Enter Email">
+                </div>
+                <h3>Location</h3>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" placeholder="Enter City">
+                </div>
+                <div class="form-group">
+                    <label for="email">State</label>
+                    <input type="text" class="form-control" id="state" placeholder="Enter State">
+                </div>
+                <div class="form-group">
+                    <label for="zip">Zip</label>
+                    <input type="text" class="form-control" id="zip" placeholder="Enter Zip Code">
+                </div>
+                <button type="submit" class="btn btn-primary addValue">Submit</button>
+            </form>
         </div>
-        <div class="col-sm-6">
-            <ul class="list-inline d-flex flex-row-reverse">
-                <li class="list-inline-item"><a href="#">Privacy</a></li>
-                <li class="list-inline-item"><a href="#">Terms</a></li>
-                <li class="list-inline-item"><a href="#">Settings</a></li>
+        <div class="col-md-6">
+            <ul id="contacts" class="list-group">
+                <!-- Conatct Object li.list-group-item.contact will be added here by js -->
             </ul>
         </div>
     </div>
-</div> <!--footer design End-->
+    <div class="row">
+        <div class="col-md-6">
+            <div><iframe src="//time2hack.com/ads.html" frameborder=0 class="embed-responsive-item" align="center"></iframe></div>
+        </div>
+        <div class="col-md-6">
+            <div><iframe src="//time2hack.com/ads.html" frameborder=0 class="embed-responsive-item" align="center"></iframe></div>
+        </div>
+    </div>
+</div>
 
 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Latest compiled and minified Bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!-- Include Firebase Library -->
+<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+<!-- Contacts Store JavaScript -->
+<script >
+    // file: script.js
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCfolxrOcBrgxVXKiBmdRbwakCNsw-kHbQ",
+        authDomain: "tempone-7869c.firebaseapp.com",
+        databaseURL: "https://tempone-7869c.firebaseio.com",
+        projectId: "tempone-7869c",
+        storageBucket: "tempone-7869c.appspot.com",
+        messagingSenderId: "557485542616"
+    };
+    firebase.initializeApp(config);
+
+    //create firebase database reference
+    var dbRef = firebase.database();
+    var contactsRef = dbRef.ref('contacts');
+
+    //load older conatcts as well as any newly added one...
+    contactsRef.on("child_added", function(snap) {
+        console.log("added", snap.key, snap.val());
+        $('#contacts').append(contactHtmlFromObject(snap.val()));
+    });
+
+    //save contact
+    $('.addValue').on("click", function( event ) {
+        event.preventDefault();
+        if( $('#name').val() != '' || $('#email').val() != '' ){
+            contactsRef.push({
+                name: $('#name').val().replace(/<[^>]*>/ig, ""),
+                email: $('#email').val().replace(/<[^>]*>/ig, ""),
+                location: {
+                    city: $('#city').val().replace(/<[^>]*>/ig, ""),
+                    state: $('#state').val().replace(/<[^>]*>/ig, ""),
+                    zip: $('#zip').val().replace(/<[^>]*>/ig, "")
+                }
+            })
+            contactForm.reset();
+        } else {
+            alert('Please fill atlease name or email!');
+        }
+    });
+
+    //prepare conatct object's HTML
+    function contactHtmlFromObject(contact){
+        console.log( contact );
+        var html = '';
+        html += '<li class="list-group-item contact">';
+        html += '<div>';
+        html += '<p class="lead">'+contact.name+'</p>';
+        html += '<p>'+contact.email+'</p>';
+        html += '<p><small title="'+contact.location.zip+'">'+contact.location.city+', '+contact.location.state+'</small></p>';
+        html += '</div>';
+        html += '</li>';
+        return html;
+    }
+
+</script>
 </body>
 </html>

@@ -24,7 +24,7 @@
                     </div>
                     <form>
                         <div class="form-label-group">
-                            <input type="email" id="inputEmail" class="form-control form-control-lg" placeholder="Search the documentation " required autofocus>
+                            <input type="text" name="search" id="inputEmail" class="form-control form-control-lg" placeholder="Search the documentation " required autofocus>
                         </div>
                     </form>
                 </div>
