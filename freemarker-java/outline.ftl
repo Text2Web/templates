@@ -3,7 +3,6 @@
 <head>
     <title>${page.title}</title>
     <#include "common/common-header.ftl" />
-    ${tagHelper.addCssTag("/asset/css/style.css")}
     ${tagHelper.addCssTag("/asset/css/outline-page.css")}
 </head>
 <body>
@@ -30,5 +29,6 @@
         </main>
     </div>
 </div>
+<#include "common/footer.ftl" />
 </body>
 </html>
