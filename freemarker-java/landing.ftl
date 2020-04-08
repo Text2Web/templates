@@ -14,7 +14,7 @@
             <li><a href="http://youtube.com/hmtmcse" target="_blank" style="font-size: 20px;"><i class="fab fa-youtube"></i> YouTube</a></li>
         </ul>
     </div>
-
+    <#include "common/search.ftl" />
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -24,7 +24,7 @@
                     </div>
                     <form>
                         <div class="form-label-group">
-                            <input type="text" name="search" id="inputEmail" class="form-control form-control-lg" placeholder="Search the documentation " required autofocus>
+                            <input type="text" name="search" id="inputEmail" autocomplete="off" class="form-control form-control-lg" data-toggle="modal" data-target="#exampleModalCenter" placeholder="Search the documentation " required autofocus>
                         </div>
                     </form>
                 </div>
