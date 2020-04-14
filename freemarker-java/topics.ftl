@@ -22,7 +22,7 @@
             <div class="row">
                 <#if page.topics?has_content>
                     <#list page.topics as topic>
-                        <div class="col-3 col-md-3 margin-bottom-20" >
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 margin-bottom-20" >
                             <a href="${tagHelper.twUrlWithExtension(topic.url)}">
                                 <div class="card">
                                     <img src="<#if topic.image?has_content>${topic.image}<#else>/asset/images/default_thumbs.jpg</#if>" class="card-img-top">
