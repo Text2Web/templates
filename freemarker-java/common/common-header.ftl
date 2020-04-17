@@ -2,6 +2,8 @@
 <link rel="icon" href="data:;base64,=">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+${tagHelper.getHeaderTags()}
+
 ${tagHelper.addCssTag("/asset/css/bootstrap.min.css")}
 ${tagHelper.addCssTag("/asset/font-awesome/css/font-awesome.min.css")}
 ${tagHelper.addCssTag("/asset/font-awesome/css/all.css")}
