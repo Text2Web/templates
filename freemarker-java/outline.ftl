@@ -16,6 +16,7 @@
         <#include "common/left-nav.ftl" />
 
         <main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content" role="main">
+            <#include "common/breadcrumb.ftl" />
             <div class="col inner-content">
                 <#list page.topics as outline>
                     <h3 class="underline-header">${outline.name}</h3>

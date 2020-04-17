@@ -19,6 +19,7 @@
         <#include "common/left-nav.ftl" />
 
         <main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content" role="main">
+            <#include "common/breadcrumb.ftl" />
             <div class="row">
                 <#if page.topics?has_content>
                     <#list page.topics as topic>
