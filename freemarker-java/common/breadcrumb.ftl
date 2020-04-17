@@ -1,10 +1,3 @@
-<style>
-    .breadcrumb {
-        padding: 2px;
-        background-color: transparent;
-        margin-left: 0px;
-    }
-</style>
 <#if page.breadcrumb?has_content >
     <span aria-label="breadcrumb">
     <ol class="breadcrumb">
