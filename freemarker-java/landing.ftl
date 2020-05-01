@@ -20,7 +20,7 @@
             <div class="col-sm-12">
                 <div class="intro">
                     <div class="text-center mb-4">
-                        <img  src="${tagHelper.twUrl("/asset/images/logo.png")}" class="responsive" alt="Logo" width="500px"/>
+                        <img  src="${tagHelper.twUrl("/asset/images/logo.png")}" alt="Logo" class="img-fluid"/>
                     </div>
                     <form>
                         <div class="form-label-group">
