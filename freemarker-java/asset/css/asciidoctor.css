@@ -1871,7 +1871,7 @@
 }
 
 .asciidoctor-content p {
-    margin-bottom: 1.25rem
+    margin-bottom: 2.50rem
 }
 
 .asciidoctor-content .sidebarblock p, .sidebarblock dt, .sidebarblock td.content, p.tableblock {
@@ -2398,4 +2398,24 @@
 
 .asciidoctor-content .CodeRay .head .head {
     color: #f4f
+}
+
+.mp-10-px{
+    margin-top: 10px !important;
+}
+
+.mp-20-px{
+    margin-top: 20px !important;
+}
+
+.mp-50-px{
+    margin-top: 50px !important;
+}
+
+.mp-80-px{
+    margin-top: 80px !important;
+}
+
+.mp-100-px{
+    margin-top: 100px !important;
 }
