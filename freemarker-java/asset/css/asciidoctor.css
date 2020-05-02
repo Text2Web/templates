@@ -1871,7 +1871,7 @@
 }
 
 .asciidoctor-content p {
-    margin-bottom: 2.50rem
+    margin-bottom: 1.90rem
 }
 
 .asciidoctor-content .sidebarblock p, .sidebarblock dt, .sidebarblock td.content, p.tableblock {
@@ -2400,22 +2400,22 @@
     color: #f4f
 }
 
-.mp-10-px{
+.mt-10-px{
     margin-top: 10px !important;
 }
 
-.mp-20-px{
+.mt-20-px{
     margin-top: 20px !important;
 }
 
-.mp-50-px{
+.mt-50-px{
     margin-top: 50px !important;
 }
 
-.mp-80-px{
+.mt-80-px{
     margin-top: 80px !important;
 }
 
-.mp-100-px{
+.mt-100-px{
     margin-top: 100px !important;
 }
