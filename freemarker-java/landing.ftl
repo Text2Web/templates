@@ -24,7 +24,7 @@
                     </div>
                     <form>
                         <div class="form-label-group">
-                            <input type="text" name="search" id="inputEmail" autocomplete="off" class="form-control form-control-lg" data-toggle="modal" data-target="#exampleModalCenter" placeholder="Search the documentation " required autofocus>
+                            <input type="text" name="search" id="google-search-input" autocomplete="off" class="form-control form-control-lg" data-toggle="modal" data-target="#exampleModalCenter" placeholder="Search the documentation " required autofocus>
                         </div>
                     </form>
                 </div>

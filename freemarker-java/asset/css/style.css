@@ -180,3 +180,7 @@ h2 {
 .margin-bottom-20{
     margin-bottom: 20px;
 }
+
+.asciidoctor-content{
+    padding-bottom: 50px;
+}
