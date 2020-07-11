@@ -1,12 +1,45 @@
+
+function textToSpeech(text, close){
+    var msg = new SpeechSynthesisUtterance();
+    var voices = window.speechSynthesis.getVoices();
+    msg.voice = voices[5];
+    msg.rate = 1;
+    msg.pitch = 1;
+    msg.text = text;
+    msg.onend = function(e) {
+        if (close !== undefined){
+            close();
+        }
+    };
+    speechSynthesis.speak(msg);
+}
+
+function playEnglishWord(wordList){
+    if (wordList !== undefined){
+        let index = 0;
+        let inteval = setInterval(function () {
+            textToSpeech(wordList[index].bangla);
+            index++;
+            if (index === wordList.length){
+                clearInterval(inteval)
+            }
+        }, 2000)
+    }
+}
+
+
+
 jQuery(document).ready(function () {
     var loadData = jQuery("#load-data")
-    var url = loadData.attr("load-url")
+    var url = loadData.attr("load-url");
 
+    var wordList = undefined;
     if (url !== undefined) {
         jQuery.ajax({url: "http://localhost:8188/asset" + "/data-files/" + url + ".json", dataType: 'json', success: function(result){
                 if (result !== undefined && result !== ""){
+                    wordList = result;
                     var button = "<br/><div class=\"btn-group\" role=\"group\">";
-                    button += "<button type=\"button\" class=\"btn btn-secondary\">Play All</button>";
+                    button += "<button type=\"button\" class=\"btn btn-secondary play-word\">Play All</button>";
                     button += "<button type=\"button\" class=\"btn btn-secondary\">Practise</button>";
                     button += "</div><br/><br/>";
 
@@ -18,10 +51,8 @@ jQuery(document).ready(function () {
                     table += "<th>Example</th>";
                     table += "</tr></thead>";
 
-                    table += "<tbody>";
-
+                    table += "<tbody id='word-table'>";
                     jQuery.each(result, function (index, object) {
-                        console.log(object)
                         table += "<tr>";
                         table += "<td>" + object.english + "</td>";
                         table += "<td>" + object.bangla + "</td>";
@@ -35,6 +66,11 @@ jQuery(document).ready(function () {
                     table += "</tbody>";
                     loadData.html("");
                     loadData.html(button + table);
+
+                    jQuery(".play-word").on( "click", function() {
+                        playEnglishWord(wordList);
+                    });
+
                 }
         }});
     }
