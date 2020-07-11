@@ -18,7 +18,7 @@ function playEnglishWord(wordList){
     if (wordList !== undefined){
         let index = 0;
         let inteval = setInterval(function () {
-            textToSpeech(wordList[index].bangla);
+            textToSpeech(wordList[index].english);
             index++;
             if (index === wordList.length){
                 clearInterval(inteval)
