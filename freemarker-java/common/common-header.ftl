@@ -16,5 +16,6 @@ ${tagHelper.addJsTag("/asset/js/jquery-3.2.1.min.js")}
 ${tagHelper.addJsTag("/asset/js/popper.min.js")}
 ${tagHelper.addJsTag("/asset/js/bootstrap.min.js")}
 ${tagHelper.addJsTag("/asset/js/jquery.autocomplete.js")}
+${tagHelper.addJsTag("/asset/js/load-json.js")}
 
 <#include "google-tracker.ftl" />
