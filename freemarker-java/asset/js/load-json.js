@@ -14,11 +14,20 @@ function textToSpeech(text, close){
     speechSynthesis.speak(msg);
 }
 
+function selectRow(row) {
+    var table = jQuery("#word-table")
+    table.find("tr").removeClass("table-success")
+    table.find(".row-" + row).addClass("table-success")
+}
+
 function playEnglishWord(wordList){
     if (wordList !== undefined){
         let index = 0;
         let inteval = setInterval(function () {
-            textToSpeech(wordList[index].english);
+            selectRow(index)
+            textToSpeech(wordList[index].english, function () {
+                selectRow(index)
+            });
             index++;
             if (index === wordList.length){
                 clearInterval(inteval)
@@ -53,7 +62,7 @@ jQuery(document).ready(function () {
 
                     table += "<tbody id='word-table'>";
                     jQuery.each(result, function (index, object) {
-                        table += "<tr>";
+                        table += "<tr class='row-" + index + " '>";
                         table += "<td>" + object.english + "</td>";
                         table += "<td>" + object.bangla + "</td>";
                         table += "<td>" + object.synonymous + "</td>";
