@@ -20,17 +20,25 @@ function selectRow(row) {
     table.find(".row-" + row).addClass("table-success")
 }
 
+var playAllInterval;
+
+function closePlayAll() {
+    if (playAllInterval !== undefined){
+        clearInterval(playAllInterval);
+    }
+}
+
 function playEnglishWord(wordList){
     if (wordList !== undefined){
         let index = 0;
-        let inteval = setInterval(function () {
+        playAllInterval = setInterval(function () {
             selectRow(index)
             textToSpeech(wordList[index].english, function () {
                 selectRow(index)
             });
             index++;
             if (index === wordList.length){
-                clearInterval(inteval)
+                closePlayAll();
             }
         }, 2000)
     }
