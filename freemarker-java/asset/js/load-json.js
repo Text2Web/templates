@@ -78,7 +78,7 @@ function spellCheckAndAddRow(wordDetails) {
 
     var yesNo = "<button type=\"button\" class=\"btn btn-danger\">NO</button>"
     if (wordDetails !== undefined && wordDetails.english !== undefined){
-        var areEqual = value.toLowerCase() === wordDetails.english.toLowerCase();
+        var areEqual = value.toLowerCase().trim() === wordDetails.english.toLowerCase();
         if (areEqual){
             yesNo = "<button type=\"button\" class=\"btn btn-success\">YES</button>"
             correct++
