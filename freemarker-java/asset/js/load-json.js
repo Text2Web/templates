@@ -173,7 +173,7 @@ jQuery(document).ready(function () {
 
     var wordList = undefined;
     if (url !== undefined) {
-        jQuery.ajax({url: "http://localhost:8188/asset" + "/data-files/" + url + ".json", dataType: 'json', success: function(result){
+        jQuery.ajax({url: "/data-file/" + url + ".json", dataType: 'json', success: function(result){
                 if (result !== undefined && result !== ""){
                     wordList = result;
                     var button = "<br/><div class=\"btn-group\" role=\"group\">";
