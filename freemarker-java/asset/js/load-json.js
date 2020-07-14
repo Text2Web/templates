@@ -179,6 +179,7 @@ jQuery(document).ready(function () {
                     var button = "<br/><div class=\"btn-group\" role=\"group\">";
                     button += "<button type=\"button\" class=\"btn btn-secondary play-word\">Play All</button>";
                     button += "<button type=\"button\" class=\"btn btn-secondary spelling-practise\">Practise</button>";
+                    button += "<button type=\"button\" class=\"btn btn-danger stop\">Stop</button>";
                     button += "</div><br/><br/>";
 
                     var table = "<div id='vocabulary-list'><table class=\"table table-condensed\">";
@@ -214,6 +215,12 @@ jQuery(document).ready(function () {
 
                     jQuery(".spelling-practise").on( "click", function() {
                         spellingPractise(wordList);
+                    });
+
+                    jQuery(".stop").on( "click", function() {
+                        closeAll()
+                        jQuery("#vocabulary-list").show();
+                        jQuery("#spelling-list").hide();
                     });
 
                 }
