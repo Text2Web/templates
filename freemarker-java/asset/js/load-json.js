@@ -11,6 +11,7 @@ function textToSpeech(text, close){
             close();
         }
     };
+    console.log(msg)
     speechSynthesis.speak(msg);
 }
 
@@ -20,7 +21,7 @@ function selectRow(row) {
     table.find(".row-" + row).addClass("table-success")
 }
 
-var playAllInterval, spellingPractiseInterval, counterInterval;
+var playAllInterval, spellingPractiseInterval, counterInterval, isPlaying = false;
 
 
 function closePlayAll() {
@@ -55,6 +56,7 @@ function startCounterInterval(count) {
 function playEnglishWord(wordList){
     if (wordList !== undefined){
         let index = 0;
+        isPlaying = true
         playAllInterval = setInterval(function () {
             selectRow(index)
             textToSpeech(wordList[index].english, function () {
@@ -163,8 +165,22 @@ function closeAll(){
     closeCounterInterval();
     closePlayAll();
     closeSpellingPractise();
+    isPlaying = false
 }
 
+function pronounce() {
+    var action = jQuery(".pronounce");
+    action.on( "click", function() {
+        if (!isPlaying) {
+            var word = $(this).text()
+
+            if (word !== undefined) {
+                word = word.trim()
+                textToSpeech(word)
+            }
+        }
+    })
+}
 
 
 jQuery(document).ready(function () {
@@ -194,7 +210,7 @@ jQuery(document).ready(function () {
                     table += "<tbody id='word-table'>";
                     jQuery.each(result, function (index, object) {
                         table += "<tr class='row-" + index + " '>";
-                        table += "<td>" + object.english + "</td>";
+                        table += "<td style='cursor: pointer;' class='pronounce'>" + object.english + "</td>";
                         table += "<td>" + object.bangla + "</td>";
                         table += "<td>" + object.synonymous + "</td>";
                         table += "<td>" + object.englishMeaning + "</td>";
@@ -224,7 +240,7 @@ jQuery(document).ready(function () {
                         jQuery("#vocabulary-list").show();
                         jQuery("#spelling-list").hide();
                     });
-
+                    pronounce();
                 }
         }});
     }
