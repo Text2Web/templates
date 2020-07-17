@@ -187,6 +187,7 @@ jQuery(document).ready(function () {
                     table += "<th>English</th>";
                     table += "<th>Bangla</th>";
                     table += "<th>Synonymous</th>";
+                    table += "<th>English Meaning</th>";
                     table += "<th>Example</th>";
                     table += "</tr></thead>";
 
@@ -196,6 +197,7 @@ jQuery(document).ready(function () {
                         table += "<td>" + object.english + "</td>";
                         table += "<td>" + object.bangla + "</td>";
                         table += "<td>" + object.synonymous + "</td>";
+                        table += "<td>" + object.englishMeaning + "</td>";
                         table += "<td>" + object.example + "</td>";
                         table += "</tr>";
                     })
